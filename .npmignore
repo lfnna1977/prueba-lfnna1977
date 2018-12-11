@@ -1,5 +1,5 @@
 # Ignore file test example
-/index.js
+/test.js
 
 ## Directory-based project format
 .idea/
