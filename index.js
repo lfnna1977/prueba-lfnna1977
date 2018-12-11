@@ -1,5 +1,5 @@
 // we instantiate the library
-var fuzzy = require('./lib/node-fuzzy');
+var fuzzy = require('./lib/prueba-lfnna1977');
 
 // Test
 var example = [{
