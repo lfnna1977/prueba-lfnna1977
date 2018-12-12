@@ -1,32 +1,61 @@
 # Gestión de paquetes
 
-## Integrante
+## Estudiante
 
-- Navarro Arias  Luis Fernando Numa
+- Navarro Arias Luis Fernando Numa
 
-# Proyecto Final
-Generar un componente web simple, puede ser un botón con animación, algún estilo para inputs, alguna librería js, etc.
+# Resumen
 
-Una vez generado el componente web, publicarlo en el gestor de paquetes que desee.
+Paquete que nos permite realizar una busqueda Fuzzy dentro de una colección de objetos, para determinar cuales de los objetos de la colección posee el valor que estamos buscando. En general esta tecnica es utilizada para filtrar tablas.
 
-Su paquete debe incluir los siguientes aspectos:
+Se utilizo el gestor de paquetes NPM.
 
-1. Versión Beta
-2. Versión Release
-3. Sobre la versión Release generar 3 tipos de versiones,
-a. La primera versión debe ser la inicial
-b. La segunda versión debe tener alguna corrección o mejora
-c. La tercera versión debe incluir un cambio significativo, un nuevo lineamiento a su componente en comparación a la versión anterior.
-4. Preparar una breve documentación del uso de su componente.
-5. Subir tanto el código como la documentación a un repositorio en Git y compartir el link en la plataforma
+Disponible en:
 
-Para que el proyecto sea aprobado debe tener las siguientes características:
+* Paquete de [npmjs](https://www.npmjs.com/package/prueba-lfnna1977/ "prueba-lfnna1977")
+* Repositorio en [github](https://github.com/lfnna1977/prueba-lfnna1977/ "prueba-lfnna1977")
 
-1. Debe indicar que gestor de paquetes se está usando.
-2. Debe ser posible descargarlo desde el gestor de paquetes.
-3. La documentación debe ser clara de cómo utilizar el componente.
-4. Siguiendo los pasos anteriores debe ser posible utilizar su componente sin problemas o errores.
+## Modo de uso
 
-## node-fuzzy
+Primero debemos de crearnos una carpeta, que puede ser *test*, desde la linea de comando nos ubicamos en dicha carpeta e instalamos el modulo con el comando:
 
-El módulo se basa en la publicación [Búsqueda Fuzzy sobre un Array Object](https://medium.com/@peraferrer/search-fuzzy-into-array-object-for-javascript-5e08c2c18eb4?source=your-stories)
+``` $ npm install prueba-lfnna1977```
+
+Si la instalacion ha sido exitosa, se instalara prueba-lfnna1977 y todas sus dependencias (en este caso Underscore).
+
+Seguidamente se crea un archivo **app.js** desde el cual se va a utilizar el modulo:
+
+```
+var fuzzy = require('prueba-lfnna1977');
+
+// Test
+var example = [{
+    name: 'Numa',
+    language: [{
+        name: 'JavaScript',
+        expertise: 8
+    }, {
+        name: 'Node.js',
+        expertise: 7
+    }]
+}, {
+    name: 'Luis',
+    language: [{
+        name: 'HTML',
+        expertise: 9
+    }, {
+        name: 'CSS',
+        expertise: 10
+    }]
+}];
+
+// Return first object of array "example"
+console.log(fuzzy.search(example, /Node/));
+```
+y ejecutamos el archivo
+
+``` node app.js```
+
+## Metodo de busqueda Fuzzy
+
+El presente proyecto se basa en la publicación [Búsqueda Fuzzy sobre un Array Object](https://medium.com/@peraferrer/search-fuzzy-into-array-object-for-javascript-5e08c2c18eb4?source=your-stories)
